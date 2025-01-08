@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\LivreRepository;
+use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -43,7 +44,7 @@ class Livre
 
     public function setTitre(string $titre): static
     {
-        $this->titre = $titre;
+        $this->titre = {{$titre|upper}};
 
         return $this;
     }
@@ -56,7 +57,9 @@ class Livre
     public function setDatePublication(\DateTimeInterface $date_publication): static
     {
         $this->date_publication = $date_publication;
-
+		if ($date_publication=="null"){
+			return $date_publication|DateTime()
+		}
         return $this;
     }
 

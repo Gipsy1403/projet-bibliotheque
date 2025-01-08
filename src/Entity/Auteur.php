@@ -44,18 +44,21 @@ class Auteur
 
     public function setNom(string $nom): static
     {
-        $this->nom = $nom;
+     $trimmed=trim($nom)  
+	$this->nom = $nom;
 
         return $this;
     }
 
     public function getPrenom(): ?string
     {
+		
         return $this->prenom;
     }
 
     public function setPrenom(string $prenom): static
     {
+	$trimmed=trim($prenom)
         $this->prenom = $prenom;
 
         return $this;

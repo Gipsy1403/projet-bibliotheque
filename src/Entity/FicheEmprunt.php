@@ -44,7 +44,8 @@ class FicheEmprunt
 
     public function setDateRetour(\DateTimeInterface $date_retour): static
     {
-        $this->date_retour = $date_retour;
+		
+        $this->date_retour = $date_retour + 14;
 
         return $this;
     }
